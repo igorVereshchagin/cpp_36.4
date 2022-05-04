@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <QPixmap>
 #include <QPaintEvent>
+#include <QSize>
 
 class ColoredCircle : public QWidget
 {
@@ -19,6 +20,9 @@ public:
   void setRed();
   void setGreen();
   void setYellow();
+  QSize minimumSizeHint() const override {
+    return QSize(100, 100);
+  }
 private:
   QPixmap currentPix;
   QPixmap redPix;
